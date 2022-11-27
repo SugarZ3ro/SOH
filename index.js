@@ -4,6 +4,9 @@ const mongoose = require('mongoose');
 const picRoute= require("./routes/pic");
 const reqRoute = require('./routes/requests')
 require('dotenv').config();
+const cors = require('cors');
+
+app.use(cors());
 mongoose.connect(process.env.DB_URL)
 .then(console.log("DB connected"))
 .catch((err) => console.log(err));
