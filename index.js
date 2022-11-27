@@ -3,8 +3,8 @@ const app = express();
 const mongoose = require('mongoose');
 const picRoute= require("./routes/pic");
 const reqRoute = require('./routes/requests')
-
-mongoose.connect("mongodb+srv://SOH:SigmaSquad@cluster0.zmwbpml.mongodb.net/SOH?retryWrites=true&w=majority")
+require('dotenv').config();
+mongoose.connect(process.env.DB_URL)
 .then(console.log("DB connected"))
 .catch((err) => console.log(err));
 //SOH-SigmaSquad
